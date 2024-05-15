@@ -1,4 +1,4 @@
-FROM docker:23.0.6
+FROM --platform=linux/arm64 docker:26.1.2
 
 RUN apk update \
   && apk upgrade \
