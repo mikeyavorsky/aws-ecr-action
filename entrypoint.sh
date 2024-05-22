@@ -22,7 +22,8 @@ function main() {
   assume_role
   login
   run_pre_build_script $INPUT_PREBUILD_SCRIPT
-  docker_build $INPUT_TAGS $ACCOUNT_URL
+  # Skipping build to allow multi-platform images, built earlier.
+  #docker_build $INPUT_TAGS $ACCOUNT_URL
   create_ecr_repo $INPUT_CREATE_REPO
   set_ecr_repo_policy $INPUT_SET_REPO_POLICY
   put_image_scanning_configuration $INPUT_IMAGE_SCANNING_CONFIGURATION
